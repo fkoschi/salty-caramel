@@ -6,14 +6,19 @@
   "scripts": {
     "seed": "medusa seed -f ./data/seed.json",
     "build": "babel src -d dist --extensions \".ts,.js\"",
-    "start": "medusa develop"
+    "start": "medusa migrations run && medusa develop",
+    "start:dev": "medusa develop",
+    "heroku-postbuild": "medusa migrations run",
+    "prepare": "npm run build"
   },
   "dependencies": {
     "@medusajs/medusa": "^1.6.0",
     "@medusajs/medusa-cli": "^1.3.3",
+    "medusa-file-s3": "^1.1.8",
     "medusa-fulfillment-manual": "^1.1.31",
     "medusa-interfaces": "^1.3.3",
     "medusa-payment-manual": "^1.0.16",
+    "medusa-payment-paypal": "^1.2.6",
     "medusa-payment-stripe": "^1.1.45",
     "typeorm": "^0.2.36"
   },
