@@ -7,6 +7,7 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "clean": "lerna clean",
+    "build:admin": "lerna run build --scope salty-caramel-admin",
     "start:dev": "lerna run start",
     "start:backend": "lerna run start --scope salty-caramel-backend",
     "heroku-postbuild": "lerna run migrations --scope salty-caramel-backend"
