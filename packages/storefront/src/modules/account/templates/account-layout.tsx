@@ -4,7 +4,10 @@ import Spinner from "@modules/common/icons/spinner"
 import React, { useEffect } from "react"
 import AccountNav from "../components/account-nav"
 
-const AccountLayout: React.FC = ({ children }) => {
+type Props = {
+  children?: React.ReactNode
+}
+const AccountLayout: React.FC<Props> = ({ children }) => {
   const { customer, retrievingCustomer, checkSession } = useAccount()
 
   useEffect(() => {
